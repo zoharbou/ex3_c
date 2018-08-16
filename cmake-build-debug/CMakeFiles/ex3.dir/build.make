@@ -56,43 +56,69 @@ include CMakeFiles/ex3.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ex3.dir/flags.make
 
-CMakeFiles/ex3.dir/main.c.obj: CMakeFiles/ex3.dir/flags.make
-CMakeFiles/ex3.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Dell\Desktop\semester b\c course\ex3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ex3.dir/main.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\ex3.dir\main.c.obj   -c "C:\Users\Dell\Desktop\semester b\c course\ex3\main.c"
+CMakeFiles/ex3.dir/calculator.c.obj: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/calculator.c.obj: ../calculator.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Dell\Desktop\semester b\c course\ex3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ex3.dir/calculator.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\ex3.dir\calculator.c.obj   -c "C:\Users\Dell\Desktop\semester b\c course\ex3\calculator.c"
 
-CMakeFiles/ex3.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex3.dir/main.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Dell\Desktop\semester b\c course\ex3\main.c" > CMakeFiles\ex3.dir\main.c.i
+CMakeFiles/ex3.dir/calculator.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex3.dir/calculator.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Dell\Desktop\semester b\c course\ex3\calculator.c" > CMakeFiles\ex3.dir\calculator.c.i
 
-CMakeFiles/ex3.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex3.dir/main.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Dell\Desktop\semester b\c course\ex3\main.c" -o CMakeFiles\ex3.dir\main.c.s
+CMakeFiles/ex3.dir/calculator.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex3.dir/calculator.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Dell\Desktop\semester b\c course\ex3\calculator.c" -o CMakeFiles\ex3.dir\calculator.c.s
 
-CMakeFiles/ex3.dir/main.c.obj.requires:
+CMakeFiles/ex3.dir/calculator.c.obj.requires:
 
-.PHONY : CMakeFiles/ex3.dir/main.c.obj.requires
+.PHONY : CMakeFiles/ex3.dir/calculator.c.obj.requires
 
-CMakeFiles/ex3.dir/main.c.obj.provides: CMakeFiles/ex3.dir/main.c.obj.requires
-	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/main.c.obj.provides.build
-.PHONY : CMakeFiles/ex3.dir/main.c.obj.provides
+CMakeFiles/ex3.dir/calculator.c.obj.provides: CMakeFiles/ex3.dir/calculator.c.obj.requires
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/calculator.c.obj.provides.build
+.PHONY : CMakeFiles/ex3.dir/calculator.c.obj.provides
 
-CMakeFiles/ex3.dir/main.c.obj.provides.build: CMakeFiles/ex3.dir/main.c.obj
+CMakeFiles/ex3.dir/calculator.c.obj.provides.build: CMakeFiles/ex3.dir/calculator.c.obj
+
+
+CMakeFiles/ex3.dir/reader.c.obj: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/reader.c.obj: ../reader.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Dell\Desktop\semester b\c course\ex3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ex3.dir/reader.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\ex3.dir\reader.c.obj   -c "C:\Users\Dell\Desktop\semester b\c course\ex3\reader.c"
+
+CMakeFiles/ex3.dir/reader.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex3.dir/reader.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Dell\Desktop\semester b\c course\ex3\reader.c" > CMakeFiles\ex3.dir\reader.c.i
+
+CMakeFiles/ex3.dir/reader.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex3.dir/reader.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Dell\Desktop\semester b\c course\ex3\reader.c" -o CMakeFiles\ex3.dir\reader.c.s
+
+CMakeFiles/ex3.dir/reader.c.obj.requires:
+
+.PHONY : CMakeFiles/ex3.dir/reader.c.obj.requires
+
+CMakeFiles/ex3.dir/reader.c.obj.provides: CMakeFiles/ex3.dir/reader.c.obj.requires
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/reader.c.obj.provides.build
+.PHONY : CMakeFiles/ex3.dir/reader.c.obj.provides
+
+CMakeFiles/ex3.dir/reader.c.obj.provides.build: CMakeFiles/ex3.dir/reader.c.obj
 
 
 # Object files for target ex3
 ex3_OBJECTS = \
-"CMakeFiles/ex3.dir/main.c.obj"
+"CMakeFiles/ex3.dir/calculator.c.obj" \
+"CMakeFiles/ex3.dir/reader.c.obj"
 
 # External object files for target ex3
 ex3_EXTERNAL_OBJECTS =
 
-ex3.exe: CMakeFiles/ex3.dir/main.c.obj
+ex3.exe: CMakeFiles/ex3.dir/calculator.c.obj
+ex3.exe: CMakeFiles/ex3.dir/reader.c.obj
 ex3.exe: CMakeFiles/ex3.dir/build.make
 ex3.exe: CMakeFiles/ex3.dir/linklibs.rsp
 ex3.exe: CMakeFiles/ex3.dir/objects1.rsp
 ex3.exe: CMakeFiles/ex3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Dell\Desktop\semester b\c course\ex3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ex3.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Dell\Desktop\semester b\c course\ex3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable ex3.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ex3.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,7 +126,8 @@ CMakeFiles/ex3.dir/build: ex3.exe
 
 .PHONY : CMakeFiles/ex3.dir/build
 
-CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/main.c.obj.requires
+CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/calculator.c.obj.requires
+CMakeFiles/ex3.dir/requires: CMakeFiles/ex3.dir/reader.c.obj.requires
 
 .PHONY : CMakeFiles/ex3.dir/requires
 

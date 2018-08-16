@@ -3,4 +3,4 @@ project(ex3 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(ex3 calculator.c)
+add_executable(ex3 calculator.c reader.c)

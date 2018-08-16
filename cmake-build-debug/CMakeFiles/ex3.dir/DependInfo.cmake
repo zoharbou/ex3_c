@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Dell/Desktop/semester b/c course/ex3/main.c" "C:/Users/Dell/Desktop/semester b/c course/ex3/cmake-build-debug/CMakeFiles/ex3.dir/main.c.obj"
+  "C:/Users/Dell/Desktop/semester b/c course/ex3/calculator.c" "C:/Users/Dell/Desktop/semester b/c course/ex3/cmake-build-debug/CMakeFiles/ex3.dir/calculator.c.obj"
+  "C:/Users/Dell/Desktop/semester b/c course/ex3/reader.c" "C:/Users/Dell/Desktop/semester b/c course/ex3/cmake-build-debug/CMakeFiles/ex3.dir/reader.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -122,32 +122,59 @@ ex3/fast:
 	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/build
 .PHONY : ex3/fast
 
-main.obj: main.c.obj
+calculator.obj: calculator.c.obj
 
-.PHONY : main.obj
+.PHONY : calculator.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/main.c.obj
-.PHONY : main.c.obj
+calculator.c.obj:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/calculator.c.obj
+.PHONY : calculator.c.obj
 
-main.i: main.c.i
+calculator.i: calculator.c.i
 
-.PHONY : main.i
+.PHONY : calculator.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/main.c.i
-.PHONY : main.c.i
+calculator.c.i:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/calculator.c.i
+.PHONY : calculator.c.i
 
-main.s: main.c.s
+calculator.s: calculator.c.s
 
-.PHONY : main.s
+.PHONY : calculator.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/main.c.s
-.PHONY : main.c.s
+calculator.c.s:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/calculator.c.s
+.PHONY : calculator.c.s
+
+reader.obj: reader.c.obj
+
+.PHONY : reader.obj
+
+# target to build an object file
+reader.c.obj:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/reader.c.obj
+.PHONY : reader.c.obj
+
+reader.i: reader.c.i
+
+.PHONY : reader.i
+
+# target to preprocess a source file
+reader.c.i:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/reader.c.i
+.PHONY : reader.c.i
+
+reader.s: reader.c.s
+
+.PHONY : reader.s
+
+# target to generate assembly for a file
+reader.c.s:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/reader.c.s
+.PHONY : reader.c.s
 
 # Help Target
 help:
@@ -158,9 +185,12 @@ help:
 	@echo ... ex3
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... calculator.obj
+	@echo ... calculator.i
+	@echo ... calculator.s
+	@echo ... reader.obj
+	@echo ... reader.i
+	@echo ... reader.s
 .PHONY : help
 
 
