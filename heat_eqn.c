@@ -1,10 +1,4 @@
-/*
- * heat_eqn.c
- *
- *  Created on: Apr 18, 2018
- *      Author: OWNER
- */
-
+#include "heat_eqn.h"
 
 /**
  * A discrete form of the heat equation.

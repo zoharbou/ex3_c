@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Bouchnik/Desktop/ex3/ex3_c/calculator.h
+stdlib.h
+-
+
+C:/Users/Bouchnik/Desktop/ex3/ex3_c/heat_eqn.h
+
+C:/Users/Bouchnik/Desktop/ex3/ex3_c/reader.c
+stdio.h
+-
+malloc.h
+-
+mem.h
+-
+calculator.h
+C:/Users/Bouchnik/Desktop/ex3/ex3_c/calculator.h
+heat_eqn.h
+C:/Users/Bouchnik/Desktop/ex3/ex3_c/heat_eqn.h
+
