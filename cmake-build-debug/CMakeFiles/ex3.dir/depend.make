@@ -4,6 +4,9 @@
 CMakeFiles/ex3.dir/calculator.c.obj: ../calculator.c
 CMakeFiles/ex3.dir/calculator.c.obj: ../calculator.h
 
+CMakeFiles/ex3.dir/heat_eqn.c.obj: ../heat_eqn.c
+CMakeFiles/ex3.dir/heat_eqn.c.obj: ../heat_eqn.h
+
 CMakeFiles/ex3.dir/reader.c.obj: ../calculator.h
 CMakeFiles/ex3.dir/reader.c.obj: ../heat_eqn.h
 CMakeFiles/ex3.dir/reader.c.obj: ../reader.c

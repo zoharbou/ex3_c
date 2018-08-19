@@ -149,6 +149,33 @@ calculator.c.s:
 	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/calculator.c.s
 .PHONY : calculator.c.s
 
+heat_eqn.obj: heat_eqn.c.obj
+
+.PHONY : heat_eqn.obj
+
+# target to build an object file
+heat_eqn.c.obj:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/heat_eqn.c.obj
+.PHONY : heat_eqn.c.obj
+
+heat_eqn.i: heat_eqn.c.i
+
+.PHONY : heat_eqn.i
+
+# target to preprocess a source file
+heat_eqn.c.i:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/heat_eqn.c.i
+.PHONY : heat_eqn.c.i
+
+heat_eqn.s: heat_eqn.c.s
+
+.PHONY : heat_eqn.s
+
+# target to generate assembly for a file
+heat_eqn.c.s:
+	$(MAKE) -f CMakeFiles\ex3.dir\build.make CMakeFiles/ex3.dir/heat_eqn.c.s
+.PHONY : heat_eqn.c.s
+
 reader.obj: reader.c.obj
 
 .PHONY : reader.obj
@@ -188,6 +215,9 @@ help:
 	@echo ... calculator.obj
 	@echo ... calculator.i
 	@echo ... calculator.s
+	@echo ... heat_eqn.obj
+	@echo ... heat_eqn.i
+	@echo ... heat_eqn.s
 	@echo ... reader.obj
 	@echo ... reader.i
 	@echo ... reader.s

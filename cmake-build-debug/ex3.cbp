@@ -82,6 +82,12 @@
 		<Unit filename="C:/Users/Bouchnik/Desktop/ex3/ex3_c/calculator.h">
 			<Option target="ex3"/>
 		</Unit>
+		<Unit filename="C:/Users/Bouchnik/Desktop/ex3/ex3_c/heat_eqn.c">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="C:/Users/Bouchnik/Desktop/ex3/ex3_c/heat_eqn.h">
+			<Option target="ex3"/>
+		</Unit>
 		<Unit filename="C:/Users/Bouchnik/Desktop/ex3/ex3_c/reader.c">
 			<Option target="ex3"/>
 		</Unit>

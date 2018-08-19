@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ex3.dir/calculator.c.obj"
   "CMakeFiles/ex3.dir/reader.c.obj"
+  "CMakeFiles/ex3.dir/heat_eqn.c.obj"
   "ex3.pdb"
   "ex3.exe"
   "ex3.exe.manifest"
