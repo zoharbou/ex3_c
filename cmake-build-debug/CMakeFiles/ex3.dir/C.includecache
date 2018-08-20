@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Bouchnik/Desktop/ex3/ex3_c/calculator.c
+stdio.h
+-
+calculator.h
+C:/Users/Bouchnik/Desktop/ex3/ex3_c/calculator.h
+
 C:/Users/Bouchnik/Desktop/ex3/ex3_c/calculator.h
 stdlib.h
 -

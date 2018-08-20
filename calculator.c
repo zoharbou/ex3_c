@@ -32,7 +32,9 @@ typedef enum Directions
     UP, DOWN, RIGHT, LEFT
 } Direction;
 
-
+/**
+ * true and false indicators for convenience
+ */
 #define TRUE 0
 #define FALSE 1
 
@@ -84,8 +86,8 @@ double getNeighbor(Direction direction, double **grid, int rowIndex, int colInde
         rowNeighbor = myMod(rowNeighbor, n);
         colNeighbor = myMod(colNeighbor, m);
     }
-    if (rowNeighbor > n || rowNeighbor < 0 || colNeighbor > m || colNeighbor < 0)
-    {
+    if (rowNeighbor >= n || rowNeighbor < 0 || colNeighbor >= m || colNeighbor < 0)
+    { // the index is out of the board
         return 0;
     }
     return grid[rowNeighbor][colNeighbor];

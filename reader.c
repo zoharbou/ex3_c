@@ -27,12 +27,29 @@
 
 /**
  * @var an error massage
+ *@brief for the case that the number of args given is wrong
+ */
+char *ARGS_ERROR = "One argument expected.\n";
+
+/**
+ * the number of args expected in this program
+ */
+int NUM_OF_ARGS = 2;
+
+/**
+ *@var an error massage
+ *@brief for the case that the file was writen in a bad format or the input given was not a legal input
+ */
+char *INPUT_FILE_ERROR = "Error while reading the file- the input is not valid";
+
+/**
+ * @var an error massage
  *@brief for the case that the file fail to open
  */
 
 char *OPEN_FILE_ERROR = "Error! opening file";
 /**
- * @brief the sign of the seperation between the parts of the data in the given file
+ * @brief the sign of the separation between the parts of the data in the given file
  */
 char *SEPARATOR = "----";
 
@@ -44,7 +61,12 @@ char NEW_LINE = '\n';
 /**
  * @brief this is an error massage for the case that the malloc/realloc fails to allocate memory
  */
-char *MEMORY_ERROR = "fail to allocate memory";
+char *MEMORY_ERROR = "Fail to allocate memory";
+
+/**
+ * the initial value for a cell in the grid
+ */
+int INIT_VAL = 0;
 
 /**
  * @brief true and false signs- for readability of the program
@@ -210,7 +232,6 @@ int getIsCyclic(FILE *file, int *isCyclic)
  */
 int buildGrid(double ***grid, size_t rows, size_t columns)
 {
-    // Check if allocation succeeded. (check for NULL pointer)
     *grid = (double **) malloc(rows * sizeof(double *));
     if (*grid == NULL)
     {
@@ -242,7 +263,7 @@ void initGrid(double **grid, size_t numOfRows, size_t numOfCol, source_point *so
     {
         for (col = 0; col < numOfCol; ++col)
         {
-            grid[row][col] = 0;
+            grid[row][col] = INIT_VAL;
         }
     }
     int i;
@@ -304,11 +325,32 @@ void activateCalc(diff_func function, double **grid, size_t n, size_t m, source_
     double result;
     do
     {
-        result = calculate(heat_eqn, grid, n, m, sources, num_sources, terminate, n_iter, is_cyclic);
+        result = calculate(function, grid, n, m, sources, num_sources, terminate, n_iter, is_cyclic);
         printResults(grid, n, m, result);
     } while (result >= terminate);
     freeGrid(&grid, n);
     free(sources);
+}
+
+/**
+ * this function checks if the given points from the input file are in the board limits
+ * @param n the number of rows in the grid
+ * @param m the number of columns in the grid
+ * @param sources the list of given source points
+ * @param sourcePointsNum the number of source points
+ * @return TRUE if all the points are valid and false otherwise
+ */
+int areSourcesInBoard(size_t n, size_t m, source_point *sources, size_t sourcePointsNum)
+{
+    int i;
+    for (i = 0; i < sourcePointsNum; ++i)
+    {
+        if (sources[i].x >= n || sources[i].x < 0 || sources[i].y >= m || sources[i].y < 0)
+        {
+            return FALSE;
+        }
+    }
+    return TRUE;
 }
 
 /**
@@ -336,6 +378,10 @@ int readFile(FILE *file)
         fprintf(stderr, "%s", MEMORY_ERROR);
         return FALSE;
     }
+    if (areSourcesInBoard(n, m, sourcePoints, numOfSourcePoints) == FALSE)
+    {
+        return FALSE;
+    }
     if (readSeparator(file) == FALSE || getEndingVal(file, &endingVal) == FALSE ||
         getIterationsNum(file, &iterationsNum) || getIsCyclic(file, &isCyclic) == FALSE)
     {
@@ -360,21 +406,21 @@ int readFile(FILE *file)
  */
 int main(int argc, char *argv[])
 {
-    if (argc != 2)
+    if (argc != NUM_OF_ARGS)
     {
-        printf("One argument expected.\n");
+        printf("%s", ARGS_ERROR);
         return (1);
     }
     char *fileName = argv[1];
     FILE *file;
-    if ((file = fopen(fileName, "r")) == NULL)
+    if ((file = fopen(fileName, "r")) == NULL) // open only for reading
     {
         printf("%s", OPEN_FILE_ERROR);
         return (1);
     }
     if (readFile(file) == FALSE)
     {
-        fprintf(stderr, "error while reading the file. the format was wrong");
+        fprintf(stderr, "%s", INPUT_FILE_ERROR);
     }
     fclose(file);
     return 0;
