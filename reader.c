@@ -19,7 +19,7 @@
 // ------------------------------ includes ------------------------------
 #include <stdio.h>
 #include <malloc.h>
-#include <mem.h>
+#include <string.h>
 #include "calculator.h"
 #include "heat_eqn.h"
 
@@ -300,7 +300,7 @@ void printResults(double **grid, size_t n, size_t m, double result)
     {
         for (j = 0; j < m; ++j)
         {
-            printf("%2.4lf, ", grid[i][j]);
+            printf("%2.4lf,", grid[i][j]);
         }
         printf("\n");
     }
@@ -354,6 +354,44 @@ int areSourcesInBoard(size_t n, size_t m, source_point *sources, size_t sourcePo
 }
 
 /**
+ *this function reads line by line the given file and init the values of what it read
+ *for all the pointers that are its parameters
+ * @param file the file to read
+ * @param n a pointer for the number of rows
+ * @param m a pointer for the number of columns
+ * @param sourcePoints a pointer for the list of source points
+ * @param numOfSourcePoints a pointer for the number of source points
+ * @param endingVal a pointer for the ending val
+ * @param iterationsNum a pointer for the number of iterations
+ * @param isCyclic a pointer for the is cyclic flag
+ * @return FALSE for a problem while reading the file input. TRUE otherwise
+ */
+int readLines(FILE *file, size_t *n, size_t *m, source_point **sourcePoints, size_t *numOfSourcePoints,
+              double *endingVal, unsigned int *iterationsNum, int *isCyclic)
+{
+    if (getSizeOfCalcArea(n, m, file) == FALSE || readSeparator(file) == FALSE)
+    {
+        return FALSE;
+    }
+    *sourcePoints = getSourcePoints(file, numOfSourcePoints);
+    if (*sourcePoints == NULL)
+    {
+        fprintf(stderr, "%s", MEMORY_ERROR);
+        return FALSE;
+    }
+    if (areSourcesInBoard(*n, *m, *sourcePoints, *numOfSourcePoints) == FALSE)
+    {
+        return FALSE;
+    }
+    if (readSeparator(file) == FALSE || getEndingVal(file, endingVal) == FALSE ||
+        getIterationsNum(file, iterationsNum) || getIsCyclic(file, isCyclic) == FALSE)
+    {
+        return FALSE;
+    }
+    return TRUE;
+}
+
+/**
  * this function reads the file given, analyzes the results and prints them
  * @param file the file we want to read
  * @return TRUE for a successful reading, FALSE otherwise
@@ -362,35 +400,24 @@ int readFile(FILE *file)
 {
     // parameters we want to read from the file:
     size_t n, m;
-    source_point *sourcePoints;
+    source_point *sourcePoints = NULL;
+    size_t numOfSourcePoints;
     double endingVal;
     unsigned int iterationsNum;
     int isCyclic;
 
-    if (getSizeOfCalcArea(&n, &m, file) == FALSE || readSeparator(file) == FALSE)
+    if (readLines(file, &n, &m, &sourcePoints, &numOfSourcePoints, &endingVal, &iterationsNum, &isCyclic) == FALSE)
     {
+        free(sourcePoints);
         return FALSE;
     }
-    size_t numOfSourcePoints; // counter for the source points
-    sourcePoints = getSourcePoints(file, &numOfSourcePoints);
-    if (sourcePoints == NULL)
-    {
-        fprintf(stderr, "%s", MEMORY_ERROR);
-        return FALSE;
-    }
-    if (areSourcesInBoard(n, m, sourcePoints, numOfSourcePoints) == FALSE)
-    {
-        return FALSE;
-    }
-    if (readSeparator(file) == FALSE || getEndingVal(file, &endingVal) == FALSE ||
-        getIterationsNum(file, &iterationsNum) || getIsCyclic(file, &isCyclic) == FALSE)
-    {
-        return FALSE;
-    }
+
     double **grid;
     if (buildGrid(&grid, n, m) == FALSE)
     {
         fprintf(stderr, "%s", MEMORY_ERROR);
+        freeGrid(&grid, numOfSourcePoints);
+        free(sourcePoints);
         return FALSE;
     }
     initGrid(grid, n, m, sourcePoints, numOfSourcePoints);
@@ -421,6 +448,8 @@ int main(int argc, char *argv[])
     if (readFile(file) == FALSE)
     {
         fprintf(stderr, "%s", INPUT_FILE_ERROR);
+        fclose(file);
+        return (1);
     }
     fclose(file);
     return 0;

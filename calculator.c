@@ -19,6 +19,7 @@
 
 // ------------------------------ includes ------------------------------
 #include <stdio.h>
+#include <tgmath.h>
 #include "calculator.h"
 
 // -------------------------- const definitions -------------------------
@@ -202,7 +203,7 @@ double calculate(diff_func function, double **grid, size_t n, size_t m, source_p
             initialHeatAmount = currHeatAmount;
             updateAllValues(function, grid, n, m, is_cyclic, sources, num_sources);
             currHeatAmount = getSumOfHeat(grid, n, m);
-        } while (currHeatAmount - initialHeatAmount >= terminate);
+        } while (fabs(currHeatAmount - initialHeatAmount) >= terminate);
     }
-    return currHeatAmount - initialHeatAmount;
+    return fabs(currHeatAmount - initialHeatAmount);
 }
